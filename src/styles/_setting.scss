@@ -1,0 +1,21 @@
+.setting {
+  position: fixed;
+  background: rgba(0, 0, 0, .8);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  display: none;
+  color: $light;
+
+  &.is-active {
+    display: flex;
+  }
+
+  &-body {
+    padding: $spacer;
+    max-width: 600px;
+  }
+}

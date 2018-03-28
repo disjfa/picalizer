@@ -1,0 +1,16 @@
+.actions {
+  background: $light;
+  bottom: 50px;
+  box-shadow: 0 0 10px $gray-500;
+  position: absolute;
+  right: 0;
+  width: 50px;
+
+  &-item {
+    align-items: center;
+    color: $dark;
+    display: flex;
+    height: 50px;
+    justify-content: center;
+  }
+}

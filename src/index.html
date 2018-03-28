@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>webpack starterkit</title>
+</head>
+<body>
+
+<form class="setting bg-success is-active js-hide-selected">
+    <div class="setting-body">
+        <label for="file" class="btn btn-primary">Choose file</label>
+        <div class="d-none">
+            <input type="file" id="file" class="form-control">
+        </div>
+    </div>
+</form>
+
+<nav class="actions js-show-selected d-none">
+    <a href="#resize" class="js-open-target actions-item" data-target="#resize">
+        resize
+    </a>
+</nav>
+
+<div class="js-show-selected d-none">
+    <div class="navbar bg-dark">
+        <a href="#" id="download" class="btn btn-outline-light">download</a>
+        <div class="text-light">
+            <span id="current_width">0</span>px
+            x
+            <span id="current_height">0</span>px
+        </div>
+    </div>
+</div>
+
+<form action="#" id="resize" class="setting js-can-open">
+    <div class="setting-body">
+        <h3>Resize image</h3>
+        <p>
+            Resize image using these settings.
+        </p>
+        <div class="form-group">
+            <label for="resize_width">width</label>
+            <input type="number" id="resize_width" name="width" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="resize_height">height</label>
+            <input type="number" id="resize_height" name="height" class="form-control">
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">resize</button>
+            <button type="button" class="btn btn-warning js-close-opened">cancel</button>
+        </div>
+    </div>
+</form>
+
+<canvas width="800" height="300" id="canvas"></canvas>
+<img src="" alt="" id="img" class="img-fluid">
+</body>
+</html>
