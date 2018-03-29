@@ -71,7 +71,7 @@ document.querySelectorAll('.js-close-opened').forEach(item => {
 });
 
 document.querySelectorAll('.js-open-target').forEach(item => {
-  item.addEventListener('click', function(evt) {
+  item.addEventListener('click', function (evt) {
     if (this.dataset.target) {
       evt.preventDefault();
       evt.stopPropagation();
@@ -117,3 +117,13 @@ document.querySelectorAll('form').forEach(form => {
     return false;
   });
 });
+
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('service-worker.js').then(registration => {
+      console.log('SW registered: ', registration);
+    }).catch(registrationError => {
+      console.log('SW registration failed: ', registrationError);
+    });
+  });
+}
