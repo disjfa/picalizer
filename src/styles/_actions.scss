@@ -1,16 +1,37 @@
 .actions {
-  background: $light;
   bottom: 50px;
   box-shadow: 0 0 10px $gray-500;
   position: absolute;
   right: 0;
-  width: 50px;
+  text-align: center;
 
   &-item {
+    background: $light;
     align-items: center;
     color: $dark;
-    display: flex;
-    height: 50px;
+    padding: 5px;
     justify-content: center;
+    display: block;
+    border-bottom: 1px solid $gray-400;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &:hover,
+    &:active {
+      background: $success;
+      color: $light;
+    }
+  }
+
+  &-icon {
+    font-size: 1.5rem;
+    display: block;
+  }
+
+  &-label {
+    font-size: .7rem;
+    display: block;
   }
 }

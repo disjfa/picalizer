@@ -9,6 +9,7 @@
   justify-content: center;
   display: none;
   color: $light;
+  overflow: auto;
 
   &.is-active {
     display: flex;
@@ -17,5 +18,6 @@
   &-body {
     padding: $spacer;
     max-width: 600px;
+    margin: auto;
   }
 }

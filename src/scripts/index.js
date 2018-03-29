@@ -5,27 +5,11 @@ if (module.hot) {
 }
 
 import 'babel-polyfill';
+import '@fortawesome/fontawesome';
+import '@fortawesome/fontawesome-free-solid';
 import '../styles/index.scss';
 import { resize } from "./actions/resizer";
-
-const img = document.getElementById('img');
-const canvas = document.getElementById('canvas');
-const download = document.getElementById('download');
-const fileLoader = document.getElementById('file');
-
-const resizeWidth = document.getElementById('resize_width');
-const resizeHeight = document.getElementById('resize_height');
-const currentWidth = document.getElementById('current_width');
-const currentHeight = document.getElementById('current_height');
-
-canvas.style.display = 'none';
-
-img.addEventListener('load', (evt) => {
-  resizeWidth.value = evt.target.naturalWidth;
-  resizeHeight.value = evt.target.naturalHeight;
-  currentWidth.innerText = evt.target.naturalWidth;
-  currentHeight.innerText = evt.target.naturalHeight;
-});
+import { saturation } from "./actions/saturation";
 
 function setupImage(blob) {
   img.src = window.URL.createObjectURL(blob);
@@ -51,6 +35,27 @@ function closeOpened() {
   });
 }
 
+const img = document.getElementById('img');
+const canvas = document.getElementById('canvas');
+const download = document.getElementById('download');
+const fileLoader = document.getElementById('file');
+
+const resizeWidth = document.getElementById('resize_width');
+const resizeHeight = document.getElementById('resize_height');
+const currentWidth = document.getElementById('current_width');
+const currentHeight = document.getElementById('current_height');
+
+canvas.style.display = 'none';
+
+img.addEventListener('load', (evt) => {
+  const { naturalWidth, naturalHeight } = evt.target;
+  resizeWidth.value = naturalWidth;
+  resizeHeight.value = naturalHeight;
+  currentWidth.innerText = naturalWidth;
+  currentHeight.innerText = naturalHeight;
+});
+
+
 fileLoader.addEventListener('change', (e) => {
   const { files } = e.target;
   setupImage(files[0]);
@@ -66,12 +71,14 @@ document.querySelectorAll('.js-close-opened').forEach(item => {
 });
 
 document.querySelectorAll('.js-open-target').forEach(item => {
-  item.addEventListener('click', evt => {
-    evt.preventDefault();
-    if(evt.target.dataset.target) {
-      document.querySelector(evt.target.dataset.target).classList.add('is-active');
+  item.addEventListener('click', function(evt) {
+    if (this.dataset.target) {
+      evt.preventDefault();
+      evt.stopPropagation();
+
+      document.querySelector(this.dataset.target).classList.add('is-active');
     }
-  });
+  }, false);
 });
 
 document.querySelectorAll('form').forEach(form => {
@@ -90,6 +97,23 @@ document.querySelectorAll('form').forEach(form => {
           closeOpened();
         }));
     }
+
+    if (target.id === 'saturation') {
+      // saturation
+
+      const options = {
+        red: target.elements['red'].value,
+        green: target.elements['green'].value,
+        blue: target.elements['blue'].value,
+      };
+
+      saturation(img, canvas, options)
+        .then(result => result.toBlob(blob => {
+          setupImage(blob);
+          closeOpened();
+        }));
+    }
+
     return false;
   });
 });

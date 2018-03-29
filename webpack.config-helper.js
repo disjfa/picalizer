@@ -7,6 +7,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ExtractSASS = new ExtractTextPlugin('styles/bundle.css');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const {GenerateSW, InjectManifest} = require('workbox-webpack-plugin');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = (options) => {
   const dest = Path.join(__dirname, 'dist');
@@ -46,6 +48,12 @@ module.exports = (options) => {
     }
     };
 
+  webpackConfig.plugins.push(
+    new GenerateSW({
+      swDest: './service-worker.js',
+    })
+  );
+
   if (options.isProduction) {
     webpackConfig.entry = ['./src/scripts/index'];
 
@@ -54,6 +62,7 @@ module.exports = (options) => {
         sourceMap: true,
       }),
       ExtractSASS
+      // new FaviconsWebpackPlugin('./src/img/picalizer.png')
     );
 
     webpackConfig.module.rules.push({
