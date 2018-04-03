@@ -22,6 +22,7 @@
     &:active {
       background: $success;
       color: $light;
+      text-decoration: none;
     }
   }
 
@@ -33,5 +34,34 @@
   &-label {
     font-size: .7rem;
     display: block;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .actions {
+    background: $light;
+    bottom: auto;
+    margin-top: $spacer / 2;
+    position: absolute;
+    right: auto;
+    text-align: left;
+    width: 300px;
+
+    &-item {
+      padding: $spacer;
+    }
+
+    &-icon {
+      font-size: 1rem;
+      display: inline-block;
+    }
+
+    &-label {
+      font-size: 1rem;
+      display: inline-block;
+    }
+  }
+  .main {
+    margin-left: 300px;
   }
 }

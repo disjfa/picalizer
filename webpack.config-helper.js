@@ -7,8 +7,8 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const ExtractSASS = new ExtractTextPlugin('styles/bundle.css');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const {GenerateSW, InjectManifest} = require('workbox-webpack-plugin');
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
+const { GenerateSW } = require('workbox-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = (options) => {
   const dest = Path.join(__dirname, 'dist');
@@ -32,7 +32,13 @@ module.exports = (options) => {
       new HtmlWebpackPlugin({
         template: './src/index.html'
       }),
-      new CleanWebpackPlugin([dest])
+      new CleanWebpackPlugin([dest]),
+      new GenerateSW({
+        swDest: './service-worker.js',
+      }),
+      new CopyWebpackPlugin([
+        { from: 'icon/*', to: dest, toType: 'dir' }
+      ])
     ],
     module: {
       rules: [{
@@ -46,13 +52,7 @@ module.exports = (options) => {
         }
       }]
     }
-    };
-
-  webpackConfig.plugins.push(
-    new GenerateSW({
-      swDest: './service-worker.js',
-    })
-  );
+  };
 
   if (options.isProduction) {
     webpackConfig.entry = ['./src/scripts/index'];

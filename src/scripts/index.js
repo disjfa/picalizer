@@ -81,6 +81,42 @@ document.querySelectorAll('.js-open-target').forEach(item => {
   }, false);
 });
 
+document.querySelectorAll('.js-constrain-resize').forEach(item => {
+  item.addEventListener('change', function (evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
+
+    const trg = evt.target;
+    const form = trg.form;
+
+    const { naturalHeight, naturalWidth } = img;
+    if (trg.name === 'constrain_proportions' && trg.checked === true) {
+      form.elements['height'].value = naturalHeight;
+      form.elements['width'].value = naturalWidth;
+    }
+  }, false);
+
+  item.addEventListener('input', function (evt) {
+    evt.preventDefault();
+    evt.stopPropagation();
+
+    const trg = evt.target;
+    const form = trg.form;
+
+    if (form.elements['constrain_proportions'].checked === false) {
+      return;
+    }
+
+    const { naturalHeight, naturalWidth } = img;
+    if (trg.name === 'width') {
+      form.elements['height'].value = (naturalHeight * trg.value / naturalWidth).toFixed();
+    }
+    if (trg.name === 'height') {
+      form.elements['width'].value = (naturalWidth * trg.value / naturalHeight).toFixed();
+    }
+  }, false);
+});
+
 document.querySelectorAll('form').forEach(form => {
   form.addEventListener('submit', (evt) => {
     evt.preventDefault();
