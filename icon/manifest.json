@@ -56,13 +56,28 @@
       "type": "image/png"
     },
     {
-      "src": "android-chrome-512x512.png",
-      "sizes": "1024x1024",
+      "src": "apple-touch-icon-76x76.png",
+      "sizes": "76x76",
       "type": "image/png"
     },
     {
-      "src": "android-chrome-512x512.png",
-      "sizes": "750x1334",
+      "src": "apple-touch-icon-120x120.png",
+      "sizes": "120x120",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "apple-touch-icon-1024x1024.png",
+      "sizes": "1024x1024",
       "type": "image/png"
     }
   ]
