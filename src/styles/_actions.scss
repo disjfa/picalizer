@@ -1,0 +1,67 @@
+.actions {
+  bottom: 50px;
+  box-shadow: 0 0 10px $gray-500;
+  position: absolute;
+  right: 0;
+  text-align: center;
+
+  &-item {
+    background: $light;
+    align-items: center;
+    color: $dark;
+    padding: 5px;
+    justify-content: center;
+    display: block;
+    border-bottom: 1px solid $gray-400;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+
+    &:hover,
+    &:active {
+      background: $success;
+      color: $light;
+      text-decoration: none;
+    }
+  }
+
+  &-icon {
+    font-size: 1.5rem;
+    display: block;
+  }
+
+  &-label {
+    font-size: .7rem;
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .actions {
+    background: $light;
+    bottom: auto;
+    margin-top: $spacer / 2;
+    position: absolute;
+    right: auto;
+    text-align: left;
+    width: 300px;
+
+    &-item {
+      padding: $spacer;
+    }
+
+    &-icon {
+      font-size: 1rem;
+      display: inline-block;
+    }
+
+    &-label {
+      font-size: 1rem;
+      display: inline-block;
+    }
+  }
+  .main {
+    margin-left: 300px;
+  }
+}
