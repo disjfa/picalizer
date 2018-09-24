@@ -26,6 +26,15 @@ export default {
       const { files } = e.target;
       this.$store.dispatch('setupImage', files);
     });
+    document.addEventListener('paste', this.paste, true);
+  },
+  beforeDestroy() {
+    document.removeEventListener('paste', this.paste, true);
+  },
+  methods: {
+    paste(evt) {
+      this.$store.dispatch('setupImage', evt.clipboardData.files);
+    },
   },
 };
 </script>

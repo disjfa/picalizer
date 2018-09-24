@@ -17,7 +17,7 @@ export default new Vuex.Store({
     name: state => state.name,
     loaded: state => state.loaded,
     action: state => state.action,
-    width: state => Object.assign(state.width),
+    width: state => state.width,
     height: state => state.height,
   },
   mutations: {
