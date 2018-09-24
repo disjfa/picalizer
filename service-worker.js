@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.cdae720d8979f09dfbfedbe6abba4760.js"
+  "/picalizer/precache-manifest.88aa398a9f056aefee3a29e63e26ca86.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "pica"});
