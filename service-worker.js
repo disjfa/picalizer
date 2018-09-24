@@ -11,11 +11,13 @@
  * See https://goo.gl/2aRDsh
  */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.1.0/workbox-sw.js");
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.1/workbox-sw.js");
 
 importScripts(
-  "precache-manifest.9c6b2b7a4e251b375f110288527b4113.js"
+  "/precache-manifest.cdae720d8979f09dfbfedbe6abba4760.js"
 );
+
+workbox.core.setCacheNameDetails({prefix: "pica"});
 
 /**
  * The workboxSW.precacheAndRoute() method efficiently caches and responds to
