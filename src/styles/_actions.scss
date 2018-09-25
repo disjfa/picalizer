@@ -1,18 +1,16 @@
 .actions {
   bottom: 50px;
-  box-shadow: 0 0 10px $gray-500;
   position: absolute;
   right: 0;
   text-align: center;
 
   &-item {
-    background: $light;
+    background: #535353;
     align-items: center;
-    color: $dark;
+    color: $light;
     padding: 5px;
     justify-content: center;
     display: block;
-    border-bottom: 1px solid $gray-400;
 
     &:last-child {
       border-bottom: 0;
@@ -21,7 +19,7 @@
     &:hover,
     &:active {
       background: $success;
-      color: $light;
+      color: #535353;
       text-decoration: none;
     }
   }
@@ -37,15 +35,14 @@
   }
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: $breakpoint) {
   .actions {
-    background: $light;
-    bottom: auto;
-    margin-top: $spacer / 2;
-    position: absolute;
-    right: auto;
+    position: relative;
+    background: #535353;
+    color: $light;
     text-align: left;
-    width: 300px;
+    bottom: auto;
+    right: auto;
 
     &-item {
       padding: $spacer;
@@ -60,8 +57,5 @@
       font-size: 1rem;
       display: inline-block;
     }
-  }
-  .main {
-    margin-left: 300px;
   }
 }

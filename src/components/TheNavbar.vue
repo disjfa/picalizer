@@ -1,11 +1,11 @@
 <template>
   <div>
-    <div class="navbar bg-success">
+    <div class="topbar bg-success">
       <a :href="getImage" class="btn btn-outline-light" :download="name">
         <i class="fas fa-download"></i>
         download
       </a>
-      <div class="text-light">
+      <div class="text-light btn" disabled>
         {{ width }}px x {{ height }}px
       </div>
     </div>

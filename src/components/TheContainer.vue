@@ -1,9 +1,13 @@
 <template>
-  <div>
-    <the-navbar></the-navbar>
-    <the-actions></the-actions>
-    <div class="main">
-      <div class="text-center px-2 py-2">
+  <div class="grid">
+    <nav class="grid-nav">
+      <the-navbar></the-navbar>
+    </nav>
+    <nav class="grid-action">
+      <the-actions></the-actions>
+    </nav>
+    <div class="grid-main">
+      <div class="text-center p-3">
         <img :src="getImage" alt="" class="img-fluid" ref="img">
       </div>
     </div>

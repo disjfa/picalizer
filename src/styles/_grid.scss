@@ -1,0 +1,28 @@
+@media screen and (min-width: $breakpoint) {
+  .grid {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: min-content 1fr;
+    height: 100vh;
+    max-width: 100%;
+
+    &-nav,
+    &-action,
+    &-main {
+      overflow: auto;
+    }
+    &-nav {
+      grid-column: 1/3;
+      grid-row: 1;
+    }
+    &-action {
+      grid-column: 1;
+      grid-row: 2;
+      background: #535353;
+    }
+    &-main {
+      grid-column: 2;
+      grid-row: 2;
+    }
+  }
+}
