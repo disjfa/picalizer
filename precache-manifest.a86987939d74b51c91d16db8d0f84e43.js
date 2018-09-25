@@ -1,7 +1,7 @@
 self.__precacheManifest = [
   {
-    "revision": "70e65a7d34902f2c350816ecfe2f6492",
-    "url": "/fonts/fa-solid-900.70e65a7d.eot"
+    "revision": "14a08198ec7d1eb96d515362293fed36",
+    "url": "/fonts/fa-solid-900.14a08198.woff2"
   },
   {
     "revision": "b6216d61c03e6ce0c9aea6ca7808f7ca",
@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/js/about.2ca2c031.js"
   },
   {
-    "revision": "1f601d2c3f18cd49ae698428ede63d84",
+    "revision": "a28adf3329f0443911f942fea4dfe03e",
     "url": "/index.html"
   },
   {
@@ -32,8 +32,8 @@ self.__precacheManifest = [
     "url": "/fonts/fa-solid-900.815694de.woff"
   },
   {
-    "revision": "14a08198ec7d1eb96d515362293fed36",
-    "url": "/fonts/fa-solid-900.14a08198.woff2"
+    "revision": "70e65a7d34902f2c350816ecfe2f6492",
+    "url": "/fonts/fa-solid-900.70e65a7d.eot"
   },
   {
     "revision": "0079a0ab6bec4da7d6e16f2a2e87cd71",
