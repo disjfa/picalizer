@@ -26,6 +26,11 @@ export default new Vuex.Store({
       Vue.set(state, 'name', image.name);
       Vue.set(state, 'loaded', true);
     },
+    closeImage(state) {
+      Vue.set(state, 'image', false);
+      Vue.set(state, 'name', false);
+      Vue.set(state, 'loaded', false);
+    },
     updateImage(state, image) {
       Vue.set(state, 'image', image);
     },

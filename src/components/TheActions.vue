@@ -16,6 +16,10 @@
       <span class="actions-icon"><i class="fas fa-fw fa-adjust"></i></span>
       <span class="actions-label">saturation</span>
     </a>
+    <router-link :to="{name: 'about'}" class="actions-item">
+      <span class="actions-icon"><i class="fas fa-fw fa-info-circle"></i></span>
+      <span class="actions-label">about</span>
+    </router-link>
   </nav>
 </template>
 

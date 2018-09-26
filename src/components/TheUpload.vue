@@ -1,9 +1,13 @@
 <template>
   <form class="setting bg-success is-active js-hide-selected">
     <div class="setting-body text-center">
+      <img src="./../images/picalizer.png" alt="" class="img-fluid logo-img">
       <h1>Picalizer</h1>
       <p>
         Image editor using just javascript.
+      </p>
+      <p>
+        Upload an image, or just paste one. It may work!
       </p>
       <div class="form-group">
         <label for="file" class="btn btn-primary">
@@ -38,3 +42,8 @@ export default {
   },
 };
 </script>
+<style>
+  .logo-img {
+    max-width: 100px;
+  }
+</style>
